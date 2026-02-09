@@ -1,5 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -7,17 +8,8 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-      {
-        protocol: 'https',
-        hostname: '**.unsplash.com',
-      },
-    ],
+    domains: ['images.unsplash.com', 'res.cloudinary.com', 'via.placeholder.com'],
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
