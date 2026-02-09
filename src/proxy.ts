@@ -1,9 +1,9 @@
-// 📦src/middleware.ts
+// 📦 src/proxy.ts
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { routePermissions } from './lib/routes';
 
-export function middleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
   const token = request.cookies.get('auth-token')?.value;
   const userRole = request.cookies.get('user-role')?.value;
   const { pathname } = request.nextUrl;
@@ -45,16 +45,5 @@ export function middleware(request: NextRequest) {
   return NextResponse.next();
 }
 
-export const config = {
-  matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - public folder
-     */
-    '/((?!api|_next/static|_next/image|favicon.ico|public/).*)',
-  ],
-};
+// Optional: Export named proxy function as well
+export { proxy };
