@@ -1,0 +1,26 @@
+{
+  "shippingOptions": [
+    {
+      "id": "standard",
+      "name": "Standard Shipping",
+      "price": 4.99,
+      "estimatedDays": "5-7",
+      "freeThreshold": 99
+    },
+    {
+      "id": "express",
+      "name": "Express Shipping",
+      "price": 9.99,
+      "estimatedDays": "2-3",
+      "freeThreshold": 150
+    },
+    {
+      "id": "overnight",
+      "name": "Overnight Shipping",
+      "price": 19.99,
+      "estimatedDays": "1",
+      "freeThreshold": 200
+    }
+  ],
+  "taxRate": 0.08
+}
